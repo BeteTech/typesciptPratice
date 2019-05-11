@@ -10,18 +10,18 @@
     <script src="./tsfn.js"></script>
     <script>
         //es5中类的写法
-        function Person() {
-            this.name = 'wy';
-            this.age = 33;
-            this.sleep = function () {
-                alert(this.name + 'sleeping...');
-            }
-        }
+        // function Person() {
+        //     this.name = 'wy';
+        //     this.age = 33;
+        //     this.sleep = function () {
+        //         alert(this.name + 'sleeping...');
+        //     }
+        // }
 
-        Person.prototype.sex = 'male';
-        Person.prototype.work = function () {
-            alert(this.name + 'working...');
-        }
+        // Person.prototype.sex = 'male';
+        // Person.prototype.work = function () {
+        //     alert(this.name + 'working...');
+        // }
 
         //类的实例化
         // var p1 = new Person();
@@ -34,11 +34,54 @@
 
 
         //类的静态方法
-        Person.getInfo = function () {
-            alert('this is a static function');
-        }
+        // Person.getInfo = function () {
+        //     alert('this is a static function');
+        // }
 
-        Person.getInfo();
+        // Person.getInfo();
+
+        //es5中的继承
+        //对象冒充实现继承
+        // function SubPerson(){
+        //     Person.call(this);//对象冒充实现继承
+        //     //对象冒充可以继承构造函数中的属性和方法，但不能继承原型链的属性和方法
+        // }
+
+        // var sp=new SubPerson();
+        // sp.sleep();
+        // alert(sp.age);
+        // // web.getInfo();
+
+        //原型链实现继承
+        // function SubPerson(){}
+        // SubPerson.prototype=new Person();
+        // var sp=new SubPerson();
+        // sp.sleep();
+        // alert(sp.age);
+        // sp.work();
+
+        //原型链实现继承的问题
+        // function Person(name,age) {
+        //     this.name = 'wy';
+        //     this.age = 33;
+        //     this.sleep = function () {
+        //         alert(this.name + 'sleeping...');
+        //     }
+        // }
+
+        // Person.prototype.sex = 'male';
+        // Person.prototype.work = function () {
+        //     alert(this.name + 'working...');
+        // }
+
+        // var p=new Person('ok',11);
+        // p.sleep();
+
+        // function SubPerson(name,age){}
+        // SubPerson.prototype=new Person();
+        // var sp=new SubPerson('us',100);
+        // sp.sleep();//实例化子类的时候，无法实现给父类构造函数传参，子类的实例仍使用父类的参数
+
     </script>
 </head>
 
