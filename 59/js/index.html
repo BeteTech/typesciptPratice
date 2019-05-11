@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <script src="./tsfn.js"></script>
+    <script>
+        //es5中类的写法
+        function Person() {
+            this.name = 'wy';
+            this.age = 33;
+            this.sleep = function () {
+                alert(this.name + 'sleeping...');
+            }
+        }
+
+        Person.prototype.sex = 'male';
+        Person.prototype.work = function () {
+            alert(this.name + 'working...');
+        }
+
+        //类的实例化
+        // var p1 = new Person();
+        // alert(p1.name);
+        // p1.sleep(); 
+
+        // var p2 = new Person();
+        // alert(p2.sex);
+        // p2.work();
+
+
+        //类的静态方法
+        Person.getInfo = function () {
+            alert('this is a static function');
+        }
+
+        Person.getInfo();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
